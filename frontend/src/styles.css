@@ -1,0 +1,95 @@
+/* General page styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Input and button styling */
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input:focus, button:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Task list */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+button.delete {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    background-color: #cc0000;
+}
+
+button.complete {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.complete:hover {
+    background-color: #45a049;
+}
+
+/* Make the container smaller on mobile devices */
+@media (max-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+/* Make the container even smaller on very small screens */
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+}
