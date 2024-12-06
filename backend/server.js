@@ -7,10 +7,8 @@ app.use(cors());
 app.use(express.json()); // For parsing application/json
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/todo-app', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
+mongoose.connect('mongodb://localhost:27017/todo-app')
+.then(() => {
     console.log('Connected to MongoDB');
 }).catch((err) => {
     console.log('Error connecting to MongoDB:', err);
