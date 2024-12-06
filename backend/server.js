@@ -14,6 +14,11 @@ mongoose.connect('mongodb+srv://rayyan:Rayyan@cluster0.wawje.mongodb.net/?retryW
     console.log('Error connecting to MongoDB:', err);
 });
 
+// Root route (added to handle GET requests to the root)
+app.get('/', (req, res) => {
+    res.send('Backend is working!');
+});
+
 // Define Task Schema
 const taskSchema = new mongoose.Schema({
     title: { type: String, required: true },
