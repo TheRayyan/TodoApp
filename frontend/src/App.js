@@ -8,7 +8,7 @@ function App() {
     const [description, setDescription] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/tasks')
+        axios.get('https://todoapp-backend-i86l.onrender.com/tasks')
             .then(response => {
                 setTasks(response.data);
             })
@@ -18,7 +18,7 @@ function App() {
     }, [tasks]);
 
     const addTask = () => {
-        axios.post('http://localhost:5000/tasks', { title, description })
+        axios.post('https://todoapp-backend-i86l.onrender.com/tasks', { title, description })
             .then(response => {
                 setTasks([...tasks, response.data]);
                 setTitle('');
@@ -30,7 +30,7 @@ function App() {
     };
 
     const toggleComplete = (id, currentStatus) => {
-        axios.put(`http://localhost:5000/tasks/${id}`, { isCompleted: !currentStatus })
+        axios.put(`https://todoapp-backend-i86l.onrender.com/tasks/${id}`, { isCompleted: !currentStatus })
             .then(response => {
                 setTasks(tasks.map(task => task._id === id ? response.data : task));
             })
@@ -40,7 +40,7 @@ function App() {
     };
 
     const deleteTask = (id) => {
-        axios.delete(`http://localhost:5000/tasks/${id}`)
+        axios.delete(`https://todoapp-backend-i86l.onrender.com/tasks/${id}`)
             .then(response => {
                 setTasks(tasks.filter(task => task._id !== id));
             })
