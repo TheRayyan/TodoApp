@@ -7,13 +7,16 @@ app.use(cors());
 app.use(express.json()); // For parsing application/json
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/todo-app', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
+mongoose.connect('mongodb+srv://rayyan:Rayyan@cluster0.wawje.mongodb.net/tasks?retryWrites=true&w=majority&appName=Cluster0')
+.then(() => {
     console.log('Connected to MongoDB');
 }).catch((err) => {
     console.log('Error connecting to MongoDB:', err);
+});
+
+// Root route (added to handle GET requests to the root)
+app.get('/', (req, res) => {
+    res.send('Backend is working!');
 });
 
 // Define Task Schema
